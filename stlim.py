@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-df = load_data('./stremamlit_data.csv')
+df = load_data('./data/stremamlit_data.csv')
 
 if 'date' in df.columns:
     df['date'] = pd.to_datetime(df['date'])
@@ -37,7 +37,7 @@ def plot_predictions_over_time(df, vegetables, rolling_mean_window):
     st.pyplot(fig)
     
 df = preprocess_data(df)
-metric_file_path = './metric_summary.csv'
+metric_file_path = './data//metric_summary.csv'
 
 metric_summary=pd.read_csv(metric_file_path)
 metric_summary.set_index('product',inplace=True)
